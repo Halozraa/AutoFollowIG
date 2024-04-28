@@ -9,7 +9,7 @@ def countdown(seconds):
 
 def shoutdown():
     try:
-        seconds = 10
+        seconds = 3
         countdown(seconds)
     except ValueError:
         print("Masukan angka bukan huruf")
