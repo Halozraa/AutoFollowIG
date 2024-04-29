@@ -3,14 +3,17 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pyautogui
 from libs import shoutdown
+import os
+import cv2
 
 # Daftar username dan password
-usernames = ['user1','user2','user3','user4','user5'] #change your user 
-passwords = ['password1', 'password2','password3','password4','password5'] #chnage your password
+usernames = ['username', 'username', 'username', 'username', 'username', 'username'] #change your user 
+passwords =['password', 'password', 'password', 'password', 'password', 'password'] #chnage your password
 
 
 def automation(username, password):
-    follow = 'https://www.instagram.com/pewdiepie/' #tujuan follow kalian url nya ya
+    fJpg = os.path.join('AutoFollowIG','assets','follow.png') #Lokasi foto follow yg ada diassets
+    follow = 'https://www.instagram.com/jenadammaya/' #tujuan follow kalian url nya ya
     # Inisialisasi WebDriver
     driver = webdriver.Chrome()
 
@@ -18,7 +21,6 @@ def automation(username, password):
 
     # Buka halaman Instagram
     driver.get("https://www.instagram.com/")
-    driver.maximize_window()
     driver.implicitly_wait(10)
     
     time.sleep(2)
@@ -54,7 +56,16 @@ def automation(username, password):
     time.sleep(2)
     print("Mencoba follow...")
     time.sleep(3)
-    pyautogui.click(1150,180,2) # auto follow
+
+    # Mencoba Mencari gambar dan mengklik nya menggunakan pyautogui
+    ss = pyautogui.locateOnScreen(fJpg,confidence=0.7)
+    if ss is not None :
+        print("Lokasian Foto ditemukan")
+        time.sleep(0.8)
+        pyautogui.click(ss)
+    else:
+        print("Foto tidak ditemukan")
+
     time.sleep(2)
     print("Berhasil follow...")
     time.sleep(3)
