@@ -2,7 +2,7 @@
 
 # Auto Follow Instagram
 
-Script ini merupakan alat otomatis untuk mengikuti akun Instagram secara massal. Ini memungkinkan Anda untuk memasukkan daftar username dan password, serta mengikuti akun Instagram yang ditentukan.
+Script ini merupakan alat otomatis untuk mengikuti akun Instagram secara massal. Ini memungkinkan Anda untuk memasukkan daftar username dan password, serta mengikuti akun Instagram yang ditentukan..
 
 ## Penggunaan
 
